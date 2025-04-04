@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Store - SamStore</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    header {
+      background: #0ff;
+      color: #000;
+      text-align: center;
+      padding: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 0 20px #0ff;
+    }
+    .container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px #0ff3;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #0ff;
+    }
+    .product h3 {
+      margin-bottom: 0.5rem;
+    }
+    .product p {
+      font-size: 1rem;
+      color: #0ff;
+      font-weight: bold;
+    }
+    .alert-box {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .alert-content {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0ff;
+      text-align: center;
+      max-width: 90%;
+    }
+    .alert-content h2 {
+      color: #0ff;
+      margin-bottom: 1rem;
+    }
+    .alert-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .alert-content a {
+      color: #0ff;
+      text-decoration: underline;
+    }
+    .alert-content button {
+      background: #0ff;
+      color: #000;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .alert-content button:hover {
+      background: #00f7ff;
+    }
+  </style>
+</head>
+<body>
+
+<header>SamsStore</header>
+
+<div class="container">
+  <div class="product" onclick="showAlert()">
+    <h3>1. Panel 500mb-unli</h3>
+    <p>Rp 1.000</p>
+  </div>
+  <div class="product" onclick="showAlert()">
+    <h3>2. Owner Panel</h3>
+    <p>Rp 6.500</p>
+  </div>
+  <div class="product" onclick="showAlert()">
+    <h3>3. PT Panel</h3>
+    <p>Rp 5.000</p>
+  </div>
+  <div class="product" onclick="showAlert()">
+    <h3>4. Owner Jasher</h3>
+    <p>Rp 6.000</p>
+  </div>
+  <div class="product" onclick="showAlert()">
+    <h3>5. Reseller Panel</h3>
+    <p>Rp 3.000</p>
+  </div>
+</div>
+
+<div class="alert-box" id="alertBox">
+  <div class="alert-content">
+    <h2>⚠️ ALERT !!! ⚠️</h2>
+    <p>
+      Kalau kamu udah transfer, CHAT ke nomor 
+      <a href="https://wa.me/6281299920538" target="_blank">
+        <strong>6281299920538</strong>
+      </a><br>
+      Bawa bukti transfer ya !!!
+          ,,PERLU DIPERHATIKAN BAHWA QRIS TIDAK BISA DIGUNAKAN,, GUNAKAN LINK DONASI !!!, SALDO POTONGAN DITANGGUNG PENJUAL !!!
+    </p>
+    <button onclick="redirect()">OKE</button>
+  </div>
+</div>
+
+<script>
+  const targetURL = "https://mr666-cry.github.io/Samstore/";
+
+  function showAlert() {
+    document.getElementById("alertBox").style.display = "flex";
+  }
+
+  function redirect() {
+    window.location.href = targetURL;
+  }
+</script>
+
+</body>
+</html>
