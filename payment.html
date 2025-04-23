@@ -1,97 +1,220 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilih Metode Pembayaran</title>
-    <link rel="stylesheet" href="style.css"> <!-- Pastikan file CSS yang sama dengan index.html digunakan -->
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            background: url('https://files.catbox.moe/7sqrwd.jpg') no-repeat center center;
-            background-size: cover;
-        }
-        .container {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-        }
-        .qris-img {
-            width: 100%;
-            max-width: 250px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        }
-        h2 {
-            margin-bottom: 15px;
-            color: black;
-        }
-        .payment-option {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            border: 2px solid black;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .payment-option img {
-            width: 40px;
-            height: 40px;
-        }
-        .copy-btn {
-            background: dodgerblue;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-        .copy-btn:hover {
-            background: deepskyblue;
-        }
-    </style>
-    <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Nomor Berhasil Disalin Bang: " + text);
-            }).catch(err => {
-                alert("Gagal Menyalin Teks Bang, mending salin manual");
-                console.error(err);
-            });
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilih Metode Pembayaran</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      background: url('https://files.catbox.moe/7sqrwd.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    .container {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .qris-img {
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: black;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .payment-option img {
+      width: 40px;
+      height: 40px;
+    }
+    .copy-btn {
+      background: dodgerblue;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background: deepskyblue;
+    }
+    .upload-box {
+      background: white;
+      border: 2px dashed #007BFF;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .upload-box h3 {
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+    .upload-box input[type="file"] {
+      display: none;
+    }
+    .custom-file-upload {
+      display: inline-block;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .custom-file-upload:hover {
+      background-color: #0056b3;
+    }
+    .uploaded-img-preview {
+      max-width: 100%;
+      max-height: 200px;
+      margin-top: 10px;
+      border-radius: 10px;
+      display: none;
+    }
+    .send-btn {
+      display: block;
+      margin-top: 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .send-btn:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://i.postimg.cc/qB1Y8Dtb/Screenshot-2025-04-04-19-38-22-15.jpg" alt="QRIS" class="qris-img">
-        <h2>Pilih Metode Pembayaran</h2><div class="payment-option">
-        <img src="https://files.catbox.moe/0lkbe3.jpg" alt="DANA"> 
-        <span>DANA - 087723764705</span>
-        <button class="copy-btn" onclick="copyToClipboard('087723764705')">Salin</button>
+  <div class="container">
+    <img src="https://i.postimg.cc/qB1Y8Dtb/Screenshot-2025-04-04-19-38-22-15.jpg" alt="QRIS" class="qris-img">
+    <h2>Pilih Metode Pembayaran</h2>
+
+    <div class="payment-option">
+      <img src="https://files.catbox.moe/0lkbe3.jpg" alt="DANA">
+      <span>DANA - 087723764705</span>
+      <button class="copy-btn" onclick="copyToClipboard('087723764705')">Salin</button>
     </div>
 
     <div class="payment-option">
-        <img src="https://files.catbox.moe/v5rzxs.jpg" alt="OVO"> 
-        <span>GOPAY - 081299920538</span>
-        <button class="copy-btn" onclick="copyToClipboard('-')">Salin</button>
+      <img src="https://files.catbox.moe/v5rzxs.jpg" alt="OVO">
+      <span>GOPAY - 081299920538</span>
+      <button class="copy-btn" onclick="copyToClipboard('081299920538')">Salin</button>
     </div>
 
-<div class="payment-option"> 
-    <span>BUKTI TRANSFER - Klik tombol untuk langsung ke WhatsApp</span>
-    <a href="https://wa.me/6281299920538?text=Permisi%20bang%2C%20aku%20beli%20%5B%20Nama%20produk%20yg%20kamu%20beli%20%5D%2C%2Caku%20udah%20transfer%20nih%20%F0%9F%91%8C%F0%9F%8F%BB%E2%9C%85%5B%20SERTAIN%20FOTO%20BUKTI%20TF%21%20%5D" target="_blank">
-        <button class="copy-btn">Kirim via WhatsApp</button>
-    </a>
-</div>
-</div>
+    <div class="upload-box">
+      <h3>Upload Bukti Transfer</h3>
+      <label for="uploadInput" class="custom-file-upload">Pilih Gambar</label>
+      <input type="file" id="uploadInput" accept="image/*" onchange="previewImage(event)">
+      <img id="preview" class="uploaded-img-preview" alt="Preview Bukti Transfer">
+      <input type="email" id="emailInput" placeholder="✉️ Email" required>
+      <button class="send-btn" onclick="sendToTelegram()">Kirim Bukti Transfer</button>
+    </div>
 
+  </div>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Nomor Berhasil Disalin: " + text);
+      }).catch(err => {
+        alert("Gagal Menyalin Teks.");
+        console.error(err);
+      });
+    }
+
+    let selectedFile;
+
+    function previewImage(event) {
+      const file = event.target.files[0];
+      selectedFile = file;
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const preview = document.getElementById('preview');
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function sendToTelegram() {
+      const email = document.getElementById('emailInput').value;
+      if (!email || !selectedFile) {
+        alert("Silakan isi email dan unggah gambar terlebih dahulu.");
+        return;
+      }
+
+      const imgbbApiKey = 'af520841c5a758ae3341b05ba1b32802';
+      const botToken = '8121413801:AAGJF09FmuYQmj2LT-Nb9CDVCsmDSxHd6z0';
+      const chatId = '7625804862';
+
+      // Upload gambar ke ImgBB
+      const formData = new FormData();
+      formData.append('image', selectedFile);
+
+      fetch('https://api.imgbb.com/1/upload?key=' + imgbbApiKey, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          const imageUrl = data.data.url;
+          sendImageToTelegram(imageUrl, email, botToken, chatId);
+        } else {
+          alert("Gagal mengupload gambar.");
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("Terjadi kesalahan saat mengupload gambar.");
+      });
+    }
+
+    function sendImageToTelegram(imageUrl, email, botToken, chatId) {
+      const message = `✉️ Email: ${email}\n\nBukti Transfer: ${imageUrl}`;
+      
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            alert("Bukti transfer berhasil dikirim!");
+          } else {
+            alert("Gagal mengirim bukti transfer.");
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert("Terjadi kesalahan saat mengirim.");
+        });
+    }
+  </script>
 </body>
 </html>
