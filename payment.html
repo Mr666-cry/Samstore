@@ -132,7 +132,7 @@
       <label for="uploadInput" class="custom-file-upload">Pilih Gambar</label>
       <input type="file" id="uploadInput" accept="image/*" onchange="previewImage(event)">
       <img id="preview" class="uploaded-img-preview" alt="Preview Bukti Transfer">
-      <input type="email" id="emailInput" placeholder="✉️ Email" required>
+      <input type="email" id="emailInput" placeholder="📞 No WhatsApp" required>
       <button class="send-btn" onclick="sendToTelegram()">Kirim Bukti Transfer</button>
     </div>
 
@@ -199,7 +199,7 @@
     }
 
     function sendImageToTelegram(imageUrl, email, botToken, chatId) {
-      const message = `📞 Nomor: ${email}\n\nBukti Transfer: ${imageUrl}`;
+      const message = `📞||✉️ Nomor/Email: ${email}\n\nBukti Transfer: ${imageUrl}`;
       
       fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
         .then(response => response.json())
