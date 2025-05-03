@@ -167,7 +167,7 @@
     function sendToTelegram() {
       const email = document.getElementById('emailInput').value;
       if (!email || !selectedFile) {
-        alert("Silakan isi email yang dipakai untuk memesan Panel dihalaman sebelumnya dan unggah gambar terlebih dahulu.");
+        alert("Silakan isi Nomor WhatsApp yang dipakai untuk memesan Panel dihalaman sebelumnya dan unggah gambar terlebih dahulu.");
         return;
       }
 
@@ -199,7 +199,7 @@
     }
 
     function sendImageToTelegram(imageUrl, email, botToken, chatId) {
-      const message = `✉️ Email: ${email}\n\nBukti Transfer: ${imageUrl}`;
+      const message = `📞 Nomor: ${email}\n\nBukti Transfer: ${imageUrl}`;
       
       fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
         .then(response => response.json())
