@@ -167,7 +167,7 @@
     function sendToTelegram() {
       const email = document.getElementById('emailInput').value;
       if (!email || !selectedFile) {
-        alert("Silakan isi Nomor WhatsApp yang dipakai untuk memesan Panel dihalaman sebelumnya dan unggah gambar terlebih dahulu.");
+        alert("Silakan isi Nomor WhatsApp yang dipakai untuk memesan Panel/Produk dihalaman sebelumnya dan unggah gambar terlebih dahulu.");
         return;
       }
 
@@ -205,7 +205,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.ok) {
-            alert("Bukti transfer berhasil dikirim!,, Data Panel akan dikirim melalui Email/No WhatsApp yang anda kirim...");
+            alert("Bukti transfer berhasil dikirim!,, Data Panel/Produk akan dikirim melalui Email/No WhatsApp yang anda kirim...");
           } else {
             alert("Gagal mengirim bukti transfer.");
           }
