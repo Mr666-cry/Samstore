@@ -18,5 +18,9 @@
   "anjayalok": {
     "pass": "syahran1234",
     "expired": "2030-12-30T23:59:59"
+  },
+  "Tes": {
+    "pass": "123",
+    "expired": "2025-08-06T13:39:34"
   }
 }
